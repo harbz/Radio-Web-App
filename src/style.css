@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+#globeViz {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+/* ── Now Playing Bar ── */
+#nowPlaying {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 255, 0, 0.25);
+  padding: 0.7rem 1.2rem;
+  border-radius: 60px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 24px rgba(0, 255, 0, 0.15), inset 0 0 30px rgba(0, 255, 0, 0.03);
+  z-index: 10;
+  min-width: 340px;
+  pointer-events: auto;
+  transition: box-shadow 0.4s;
+}
+
+#nowPlaying:hover {
+  box-shadow: 0 0 32px rgba(0, 255, 0, 0.25), inset 0 0 30px rgba(0, 255, 0, 0.05);
+}
+
+#nowPlaying.playing {
+  border-color: rgba(0, 255, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.3), inset 0 0 30px rgba(0, 255, 0, 0.05);
+}
+
+/* Pause / Play button */
+#pauseBtn {
+  background: none;
+  border: 2px solid rgba(0, 255, 0, 0.5);
+  color: #00ff00;
+  font-size: 1.3rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+  flex-shrink: 0;
+}
+
+#pauseBtn:hover {
+  background: rgba(0, 255, 0, 0.15);
+  border-color: #00ff00;
+  transform: scale(1.08);
+}
+
+#pauseBtn:active {
+  transform: scale(0.95);
+}
+
+/* Info area */
+.np-info {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.label {
+  font-size: 0.65rem;
+  color: #00ff00;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+}
+
+#stationName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Volume slider */
+#volumeSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  outline: none;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00ff00;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+}
+
+#volumeSlider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00ff00;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+}

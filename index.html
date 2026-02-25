@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radio Web App</title>
+</head>
+
+<body>
+  <div id="globeViz"></div>
+  <div id="nowPlaying">
+    <button id="pauseBtn" title="Pause / Play">⏸</button>
+    <div class="np-info">
+      <div class="label">Now Playing</div>
+      <div id="stationName">Select a station</div>
+    </div>
+    <input type="range" id="volumeSlider" min="0" max="100" value="80" title="Volume" />
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
